@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="cn.bdqn.entity.Room_db" table="`ROOM`" >
+		<id column="`ROOMID`" name="roomId">
+			<generator class="increment"></generator>
+		</id>
+		<property name="room_name" column="`ROOM_NAME`"></property>
+		<set name="destineInfoSet">
+			<key column="`ROOMID`"></key>
+			<one-to-many class="cn.bdqn.entity.DestineInfo_db"/>
+		</set>
+	</class>
+</hibernate-mapping>

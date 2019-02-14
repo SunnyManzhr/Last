@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"struts-2.5.dtd">
+<struts>
+		
+	<package name="default" namespace="/" extends="json-default">
+		
+		<action name="DestineInfo_*" class="destineInfoAction" method="{1}">
+			<result name="success">index.jsp</result>
+			<result name="redirectAction" type="redirectAction">DestineInfo_findAll</result>
+			<allowed-methods>findAll,add</allowed-methods>
+		</action>
+		
+		<action name="toAdd" class="roomAction" method="toAdd">
+			<result name="success">add.jsp</result>
+		</action>
+		
+	</package>
+
+</struts>
